@@ -1,0 +1,9 @@
+# directory
+local
+test
+build
+dist
+lemur.egg-info
+
+# file
+*.pyc

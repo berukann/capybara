@@ -3,7 +3,7 @@ local
 test
 build
 dist
-lemur.egg-info
+*.egg-info
 
 # file
 *.pyc

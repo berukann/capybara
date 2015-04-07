@@ -1,9 +1,9 @@
 # directory
 local
 test
-build
-dist
-*.egg-info
+# build
+# dist
+# *.egg-info
 
 # file
 *.pyc

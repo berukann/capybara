@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: capybara
-Version: 0.1.3
+Version: 0.1.4
 Summary: A simple wrapper for multiple tokens of multiple APIs
 Home-page: https://github.com/AkihikoITOH/capybara
 Author: ITOH Akihiko
@@ -69,7 +69,7 @@ Description: Capybara: A simple wrapper for multiple tokens of multiple APIs
         
             import capybara
         
-            c = Capybara(config_dir='/path/to/config/', tokens_dir='/path/to/tokens/')
+            c = capybara.Capybara(config_dir='/path/to/config/', tokens_dir='/path/to/tokens/')
         
             # Amazon
             result = c.get(service='amazon', item='B005CSYH5Y')
@@ -84,24 +84,6 @@ Description: Capybara: A simple wrapper for multiple tokens of multiple APIs
             print result['Items'][0]['Item']['genreId']
             print result['Items'][0]['Item']['shopName']
         
-        As a command line tool (Deprecated)
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        
-        .. code:: shell
-        
-            $ python capybaracli.py -h
-        
-            > usage: capybaracli.py [-h] {amazon,rakuten} item
-            >
-            > Capybara: Wrapper for multiple tokens of multiple APIs
-            >
-            > positional arguments:
-            >   {amazon,rakuten}  Service name
-            >   item              Item id
-            >
-            > optional arguments:
-            >   -h, --help        show this help message and exit
-        
         Setup
         -----
         
@@ -114,13 +96,6 @@ Description: Capybara: A simple wrapper for multiple tokens of multiple APIs
                └── tokens
                    ├── amazon_tokens.tsv
                    └── rakuten_tokens.tsv
-        
-            capybara
-              ├── abst_wrapper.py
-              ├── amazon_wrapper.py
-              ├── capybara.py
-              ├── capybaracli.py
-              └── rakuten_wrapper.py
         
         config directory
         ~~~~~~~~~~~~~~~~
@@ -213,7 +188,7 @@ Description: Capybara: A simple wrapper for multiple tokens of multiple APIs
         License
         -------
         
-        Copyright © 2015 ITOH Akihiko
+        Copyright &copy 2015 ITOH Akihiko
         
         See LICENSE for details.
         

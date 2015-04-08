@@ -40,7 +40,7 @@ Wrapper of [楽天商品検索API](https://webservice.rakuten.co.jp/api/ichibait
 ``` python
 import capybara
 
-c = Capybara(config_dir='/path/to/config/', tokens_dir='/path/to/tokens/')
+c = capybara.Capybara(config_dir='/path/to/config/', tokens_dir='/path/to/tokens/')
 
 # Amazon
 result = c.get(service='amazon', item='B005CSYH5Y')
@@ -56,23 +56,6 @@ print result['Items'][0]['Item']['genreId']
 print result['Items'][0]['Item']['shopName']
 ```
 
-### As a command line tool (Deprecated)
-
-``` shell
-$ python capybaracli.py -h
-
-> usage: capybaracli.py [-h] {amazon,rakuten} item
->
-> Capybara: Wrapper for multiple tokens of multiple APIs
->
-> positional arguments:
->   {amazon,rakuten}  Service name
->   item              Item id
->
-> optional arguments:
->   -h, --help        show this help message and exit
-```
-
 ## Setup
 
 ```
@@ -83,14 +66,6 @@ anywhere/you/like
    └── tokens
        ├── amazon_tokens.tsv
        └── rakuten_tokens.tsv
-
-capybara
-  ├── abst_wrapper.py
-  ├── amazon_wrapper.py
-  ├── capybara.py
-  ├── capybaracli.py
-  └── rakuten_wrapper.py
-
 ```
 
 ### config directory
@@ -160,6 +135,6 @@ applicationId4
 ```
 ## License
 
-Copyright © 2015 ITOH Akihiko
+Copyright &copy 2015 ITOH Akihiko
 
 See LICENSE for details.

@@ -1,4 +1,7 @@
 # Capybara: A simple wrapper for multiple tokens of multiple APIs
+
+[![Build Status](https://travis-ci.org/AkihikoITOH/capybara.svg?branch=master)](https://travis-ci.org/AkihikoITOH/capybara)
+
 ## About
 APIs usually require access tokens to limit frequencies of requests.
 

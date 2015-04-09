@@ -1,6 +1,12 @@
 # Capybara: A simple wrapper for multiple tokens of multiple APIs
 
 [![Build Status](https://travis-ci.org/AkihikoITOH/capybara.svg?branch=master)](https://travis-ci.org/AkihikoITOH/capybara)
+[![Downloads](https://pypip.in/download/capybara/badge.svg)](https://pypi.python.org/pypi/capybara/)
+[![Latest Version](https://pypip.in/version/capybara/badge.svg)](https://pypi.python.org/pypi/capybara/)
+[![Supported Python versions](https://pypip.in/py_versions/capybara/badge.svg)](https://pypi.python.org/pypi/capybara/)
+[![Development Status](https://pypip.in/status/capybara/badge.svg)](https://pypi.python.org/pypi/capybara/)
+[![Download format](https://pypip.in/format/capybara/badge.svg)](https://pypi.python.org/pypi/capybara/)
+[![License](https://pypip.in/license/capybara/badge.svg)](https://pypi.python.org/pypi/capybara/)
 
 ## About
 APIs usually require access tokens to limit frequencies of requests.

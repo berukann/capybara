@@ -1,1 +1,0 @@
-from .capybara import Capybara

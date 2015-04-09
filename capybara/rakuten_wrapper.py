@@ -33,18 +33,66 @@ class RakutenWrapper(Wrapper):
     # Simple wrapper for single request for API request that returns a row response
     def single_access(self, token, option=None):
         Wrapper.single_access(self,token)
-        try:
-            item_id = option['item']
-            payload = {
-                    "format": "json",
-                    "itemCode": item_id,
-                    "applicationId": token['applicationId']
+        result = {}
+        if option is not None:
+            try:
+                item_id = option['item']
+
+                if 'type' in option and option['type'] == "genre":
+                    payload = {
+                        "format": "json",
+                        "genreId": item_id,
+                        "applicationId": token['applicationId']
                     }
-            r = requests.get(API_ITEM_BASE, params=payload)
-            result = r.json()
-        except:
-            # If any exceptions happen, return None
-            print "Unexpected error accessing API:\n\t" , sys.exc_info()[0], sys.exc_info()[1]
-            result = None
+                    r = requests.get(API_GENRE_BASE, params=payload)
+                    data = r.json()
+                    if not data['parents']:
+                        result['genre'] = data['current']['genreName']
+                    else:
+                        result['genre'] = data['parents'][0]['parent']['genreName']
+                elif 'type' not in option:
+                    payload = {
+                            "format": "json",
+                            "itemCode": item_id,
+                            "applicationId": token['applicationId']
+                            }
+                    r = requests.get(API_ITEM_BASE, params=payload)
+                    data = r.json()
+                    item = data['Items'][0]['Item']
+                    result['raw'] = item
+                    result['title'] = item['itemName']
+                    result['url'] = item['itemUrl']
+                    result['category_id'] = item['genreId']
+                    opt = {"item": result["category_id"], "type": "genre"}
+                    result['category'] = self.access_wrapper(opt)['genre']
+                else:
+                    result = None
+
+            except:
+                # If any exceptions happen, return None
+                print "Unexpected error accessing API:\n\t" , sys.exc_info()[0], sys.exc_info()[1]
+                result = None
 
         return result
+
+
+# class RakutenAPIObject(APIObject):
+#     def __init__(self, api_type, raw):
+#         APIObject.__init__(self)
+#
+#     def handle_raw_value(self, api_type, raw):
+#         APIObject.handle_raw_value(self, raw)
+#         if api_type == 'item':
+#             self.raw = raw['Items'][0]['Item']
+#             self.title = self.raw['itemName']
+#             self.url = self.raw['itemUrl']
+#             self.genre_id = self.raw['genreId']
+#             # detail['category'] = get_genre(item['genreId'])
+#         elif api_type == 'genre':
+#             if raw['parents'] == []:
+#                 self.genre = raw['current']['genreName']
+#             else:
+#                 self.genre = raw['parents'][0]['parent']['genreName']
+#         else:
+#             pass
+

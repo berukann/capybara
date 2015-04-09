@@ -1,9 +1,13 @@
 # directory
 local
 test
+
 # build
 # dist
 # *.egg-info
 
 # file
 *.pyc
+
+# IDE
+.idea

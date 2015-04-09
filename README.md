@@ -44,16 +44,17 @@ c = capybara.Capybara(config_dir='/path/to/config/', tokens_dir='/path/to/tokens
 
 # Amazon
 result = c.get(service='amazon', item='B005CSYH5Y')
-print result.title
-print result.get_attribute('ProductGroup')
-print result.get_attribute('Manufacturer')
-print result.get_attributes(['ProductGroup', 'Manufacturer'])
+print result['raw']
+print result['title']
+print result['category']
 
 # 楽天
 result = c.get(service='rakuten', item='urutoragion:10000866')
-print result['Items'][0]['Item']['itemName']
-print result['Items'][0]['Item']['genreId']
-print result['Items'][0]['Item']['shopName']
+print result['raw']
+print result['title']
+print result['url']
+print result['category_id']
+print result['category']
 ```
 
 ## Setup

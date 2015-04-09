@@ -31,10 +31,15 @@ class AmazonWrapper(Wrapper):
     # Simple wrapper for single request for API request that returns a row response
     def single_access(self, token, option=None):
         Wrapper.single_access(self,token)
+        result = {}
         try:
             asin = option['item']
             amazon = AmazonAPI(token['ACCESS_KEY'], token['SECRET_KEY'], token['ASSOC_TAG'], region=token['LOCALE'])
-            result = amazon.lookup(ItemId=asin)
+            data = amazon.lookup(ItemId=asin)
+            result['raw'] = data
+            result['title'] = data.title
+            result['category'] = data.get_attribute('ProductGroup')
+
         except:
             # If any exceptions happen, return None
             print "Unexpected error accessing API:\n\t" , sys.exc_info()[0], sys.exc_info()[1]

@@ -44,7 +44,7 @@ class Wrapper:
         try:
             self.tokens_reader = csv.reader(file(self.tokens_path), delimiter='\t')
         except:
-            sys.stderr.write("Unexpected error while reading %s:\n\t" % self.tokens_path , sys.exc_info()[0], sys.exc_info()[1])
+            sys.stderr.write("Unexpected error while reading %s:\n\t%s\n\t%s" % (self.tokens_path , sys.exc_info()[0], sys.exc_info()[1]))
 
         self.tokens = []
 
@@ -61,7 +61,7 @@ class Wrapper:
             self.config_reader = open(self.config_path)
             self.config = json.load(self.config_reader)
         except:
-            sys.stderr.write("Unexpected error while reading %s:\n\t" % self.config_path , sys.exc_info()[0], sys.exc_info()[1])
+            sys.stderr.write("Unexpected error while reading %s:\n\t%s\n\t%s" % (self.config_path , sys.exc_info()[0], sys.exc_info()[1]))
             self.config = {'interval': 1000, 'slow':1}
             sys.stderr.write('Using default config...')
 

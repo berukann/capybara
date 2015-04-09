@@ -42,7 +42,7 @@ class AmazonWrapper(Wrapper):
 
         except:
             # If any exceptions happen, return None
-            print "Unexpected error accessing API:\n\t" , sys.exc_info()[0], sys.exc_info()[1]
+            sys.stderr.write("Unexpected error accessing API:\n\t" , sys.exc_info()[0], sys.exc_info()[1])
             result = None
 
         return result

@@ -35,7 +35,7 @@ class Wrapper:
     # Read lib/tokens/xxx_tokens.tsv
     def read_tokens(self, path):
         if path is None:
-            print 'Using default token...'
+            sys.stderr.write('Using default config...')
             self.tokens_filename = './default_%s_tokens.tsv' % self.service
             self.tokens_path = os.path.normpath(os.path.join(TOKENS_DIR, self.tokens_filename))
         else:
@@ -44,14 +44,14 @@ class Wrapper:
         try:
             self.tokens_reader = csv.reader(file(self.tokens_path), delimiter='\t')
         except:
-            print "Unexpected error while reading %s:\n\t" % self.tokens_path , sys.exc_info()[0], sys.exc_info()[1]
+            sys.stderr.write("Unexpected error while reading %s:\n\t" % self.tokens_path , sys.exc_info()[0], sys.exc_info()[1])
 
         self.tokens = []
 
     # Read lib/config/xxx_config.json
     def read_config(self, path):
         if path is None:
-            print 'Using default config...'
+            sys.stderr.write('Using default config...')
             self.config_filename = './default_%s_config.json' % self.service
             self.config_path = os.path.normpath(os.path.join(DEFAULT_CONFIG_DIR, self.config_filename))
         else:
@@ -61,9 +61,9 @@ class Wrapper:
             self.config_reader = open(self.config_path)
             self.config = json.load(self.config_reader)
         except:
-            print "Unexpected error while reading %s:\n\t" % self.config_path , sys.exc_info()[0], sys.exc_info()[1]
+            sys.stderr.write("Unexpected error while reading %s:\n\t" % self.config_path , sys.exc_info()[0], sys.exc_info()[1])
             self.config = {'interval': 1000, 'slow':1}
-            print "Using default config..."
+            sys.stderr.write('Using default config...')
 
     # Calculate actual interval and roop over tokens to wait and throw request
     def access_wrapper(self, option=None):

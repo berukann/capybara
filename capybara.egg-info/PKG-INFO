@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: capybara
-Version: 0.1.5
+Version: 0.1.7
 Summary: A simple wrapper for multiple tokens of multiple APIs
 Home-page: https://github.com/AkihikoITOH/capybara
 Author: ITOH Akihiko
@@ -8,6 +8,9 @@ Author-email: akihiko.mus+pypi@gmail.com
 License: MIT
 Description: Capybara: A simple wrapper for multiple tokens of multiple APIs
         ===============================================================
+        
+        |Build Status| |Downloads| |Latest Version| |Supported Python versions|
+        |Development Status| |Download format| |License|
         
         About
         -----
@@ -192,6 +195,21 @@ Description: Capybara: A simple wrapper for multiple tokens of multiple APIs
         Copyright &copy 2015 ITOH Akihiko
         
         See LICENSE for details.
+        
+        .. |Build Status| image:: https://travis-ci.org/AkihikoITOH/capybara.svg?branch=master
+           :target: https://travis-ci.org/AkihikoITOH/capybara
+        .. |Downloads| image:: https://pypip.in/download/capybara/badge.svg
+           :target: https://pypi.python.org/pypi/capybara/
+        .. |Latest Version| image:: https://pypip.in/version/capybara/badge.svg
+           :target: https://pypi.python.org/pypi/capybara/
+        .. |Supported Python versions| image:: https://pypip.in/py_versions/capybara/badge.svg
+           :target: https://pypi.python.org/pypi/capybara/
+        .. |Development Status| image:: https://pypip.in/status/capybara/badge.svg
+           :target: https://pypi.python.org/pypi/capybara/
+        .. |Download format| image:: https://pypip.in/format/capybara/badge.svg
+           :target: https://pypi.python.org/pypi/capybara/
+        .. |License| image:: https://pypip.in/license/capybara/badge.svg
+           :target: https://pypi.python.org/pypi/capybara/
         
 Keywords: amazon,product advertising,rakuten,item search,api
 Platform: UNKNOWN

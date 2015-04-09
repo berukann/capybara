@@ -13,5 +13,3 @@ capybara.egg-info/dependency_links.txt
 capybara.egg-info/requires.txt
 capybara.egg-info/top_level.txt
 capybara.egg-info/zip-safe
-test/test.py
-test/test2.py

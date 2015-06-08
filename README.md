@@ -29,7 +29,7 @@ Send Pull Requests on [GitHub](https://github.com/AkihikoITOH/capybara) to add a
 pip install capybara
 ```
 
-or 
+or
 
 ```
 pip install git+https@github.com:AkihikoITOH/capybara.git
@@ -45,7 +45,45 @@ Wrapper of [楽天商品検索API](https://webservice.rakuten.co.jp/api/ichibait
 
 ## Usage
 
-### As a Python module (**Recommended**)
+### via cAPIbara server (**Recommended**)
+
+#### Start server
+```
+python api.py <config_dir> <tokens_dir>
+```
+
+or
+
+```
+/virtualenv/bin/Python2.7 api.py <config_dir> <tokens_dir>
+```
+
+#### Send requests
+
+##### Get info about services
+`http GET http://localhost:5000/info/<service>/`
+
+Example:
+```
+http GET http://localhost:5000/info/amazon/
+```
+
+##### Get item
+`http GET http://localhost:5000/get/<service>/<item>/`
+
+Example:
+```
+http GET http://localhost:5000/get/amazon/B000WLKFCK/
+# => {'category': 'Kitchen', 'raw': <amazon.api.AmazonProduct object at 0x104b1fcd0>, 'title': u'Panasonic \u98df\u5668\u6d17\u3044\u6a5f\u7528\u7f6e\u53f0 N-SP3'}
+
+http GET http://localhost:5000/get/amazon/B000WLKFCK/title/
+# => Panasonic 食器洗い機用置台 N-SP3
+
+http GET http://localhost:5000/get/amazon/B000WLKFCK/category
+# => Kitchen
+```
+
+### As a Python module
 
 ``` python
 import capybara

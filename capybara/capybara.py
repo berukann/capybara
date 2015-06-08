@@ -21,3 +21,12 @@ class Capybara:
     def get(self, service=None, item=None):
         return self.wrappers[service].access_wrapper({'item': item})
 
+    def isAvailable(self, service=None):
+        if service is None:
+            return False
+
+        try:
+            if self.wrappers[service]:
+                return True
+        except:
+            return False

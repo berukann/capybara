@@ -15,6 +15,8 @@ If you want to request over limitations, you need to generate multiple tokens an
 
 Capybara is a simple wrapper for multiple tokens.
 
+Send Pull Requests on [GitHub](https://github.com/AkihikoITOH/capybara) to add available services!
+
 ## Dependencies
 
 * Installed [python-amazon-simple-product-api](https://github.com/yoavaviram/python-amazon-simple-product-api) (`pip install python-amazon-simple-product-api`)
@@ -34,7 +36,6 @@ pip install git+https@github.com:AkihikoITOH/capybara.git
 ```
 
 ## Available Services
-Send Pull Requests to add services!
 
 ### Amazon
 Wrapper of [Amazon Product Advertising API](https://affiliate.amazon.co.jp/gp/advertising/api/detail/main.html).

@@ -55,7 +55,7 @@ python api.py <config_dir> <tokens_dir>
 or
 
 ```
-/virtualenv/bin/Python2.7 api.py <config_dir> <tokens_dir>
+virtualenv/bin/Python2.7 api.py <config_dir> <tokens_dir>
 ```
 
 #### Send requests
